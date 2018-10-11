@@ -17,7 +17,6 @@ Function FindBoxArt {
 
   Write-Host "Uri: $Url"
 
-  Start-Sleep -Seconds 2
   $response = Invoke-WebRequest -Uri $Url -TimeoutSec $timeoutInSeconds
   $response.Images `
     | Where-Object { $_.src -match 'images/art/' } `
